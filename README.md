@@ -15,7 +15,7 @@ To run this project Node and npm are required
 
 1. Clone the git repo.
 
-`git clone https://github.com/rohitah/bambu_code_challenge.git`
+   `git clone https://github.com/rohitah/bambu_code_challenge.git`
 
 2. Run `npm install` to install all node module dependencies
 3. Run `npm start` to run the project.
