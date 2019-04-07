@@ -1,6 +1,6 @@
 export const apiURL = "https://www.alphavantage.co/query";
 
-export const apiKey = "7WPLTPG56DTR4WO8";
+export const apiKey = "L3ZULABSY52XG6E7"; // "7WPLTPG56DTR4WO8";
 
 export const stockItemList = [
   {

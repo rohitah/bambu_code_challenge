@@ -13,10 +13,6 @@ const store = createStore(reducer, applyMiddleware(sagaMiddleware));
 
 sagaMiddleware.run(rootSaga);
 
-store.subscribe(() => {
-  console.log("StoreStatus", store.getState()); // eslint-disable-line
-});
-
 render(
   <Provider store={store}>
     <Main />

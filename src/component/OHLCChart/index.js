@@ -60,7 +60,7 @@ const ChartPanel = ({ stockData, isLoading, stockCode, note }) => {
     chartContent = (
       <React.Fragment>
         <ChartTitle>
-          <h2>{stockObj.name}</h2>
+          <h2>{stockObj && stockObj.name}</h2>
         </ChartTitle>
         <DrawChart stockData={stockData} />
       </React.Fragment>
@@ -82,13 +82,14 @@ const ChartPanel = ({ stockData, isLoading, stockCode, note }) => {
 ChartPanel.propTypes = {
   stockData: PropTypes.objectOf(PropTypes.any),
   isLoading: PropTypes.bool,
-  stockCode: PropTypes.string.isRequired,
+  stockCode: PropTypes.string,
   note: PropTypes.string
 };
 
 ChartPanel.defaultProps = {
   stockData: {},
   isLoading: false,
+  stockCode: "",
   note: ""
 };
 

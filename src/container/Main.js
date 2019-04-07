@@ -22,7 +22,6 @@ const Contener = styled.div`
 `;
 
 const Main = ({ stockData, isLoading, note, stockCode }) => {
-  console.log(stockCode);
   return (
     <React.Fragment>
       <Normalize />

@@ -3,7 +3,6 @@ const reducer = (state = {}, action) => {
     case "GET_STOCK_DATA":
       return { ...state, loading: true };
     case "STOCK_DATA_RECEIVED":
-      console.log("action", action);
       return {
         ...state,
         stockData: action.chartData,
