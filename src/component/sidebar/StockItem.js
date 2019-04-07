@@ -20,8 +20,8 @@ const StockItem = ({ itemClick, stockName, stockSymbole, isSelected }) => {
     <StockElement>
       <ButtonElement
         href="#"
-        className={isSelected ? "show" : "hidden"}
-        onClick={() => itemClick(stockSymbole, stockName)}
+        className={isSelected ? "selectedItem" : ""}
+        onClick={() => itemClick(stockSymbole)}
       >
         {stockName}
       </ButtonElement>

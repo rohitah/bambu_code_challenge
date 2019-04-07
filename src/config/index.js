@@ -1,4 +1,8 @@
-export default [
+export const apiURL = "https://www.alphavantage.co/query";
+
+export const apiKey = "7WPLTPG56DTR4WO8";
+
+export const stockItemList = [
   {
     symbol: "AUY",
     name: "Yamana Gold, Inc."
@@ -31,4 +35,19 @@ export default [
     symbol: "0294.HK",
     name: "YANGTZEKIANG"
   }
+];
+
+export const monthList = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "July",
+  "Aug",
+  "Sept",
+  "Oct",
+  "Nov",
+  "Dec"
 ];

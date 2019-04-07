@@ -1,8 +1,12 @@
 import React from "react";
 import { Normalize } from "styled-normalize";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import StockItemList from "../component/sidebar/StockItemList";
-import ChartPanel from "../component/OHLCChart/ChartPanel";
+import OhlcChart from "../component/OHLCChart";
+import Header from "../component/Header";
+import Footer from "../component/Footer";
 
 const MainWrapper = styled.div`
   display: flex;
@@ -11,56 +15,58 @@ const MainWrapper = styled.div`
   min-height: 100%;
   width: fit-content;
 `;
-
-const Header = styled.div`
-  color: #fff;
-  background: #2d2d2d;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-`;
 const Contener = styled.div`
   display: flex;
   flex-direction: row;
   min-height: 100%;
 `;
-const Footer = styled.div`
-  min-width: 100%;
-  background-color: #ededed;
-  height: 50px;
-  color: grey;
-  font-size: 9pt;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-`;
-const OHLCChart = styled.div`
-  width: 100%;
-  min-height: 100%;
-  background: #ccc;
-`;
 
-const Main = () => {
+const Main = ({ stockData, isLoading, note, stockCode }) => {
+  console.log(stockCode);
   return (
     <React.Fragment>
       <Normalize />
       <MainWrapper>
-        <Header>Stock Data Visualisation - Open-high-low-close Chart</Header>
+        <Header />
         <Contener>
           <StockItemList />
-          <OHLCChart>
-            <ChartPanel />
-          </OHLCChart>
+          <OhlcChart
+            stockData={stockData}
+            isLoading={isLoading}
+            stockCode={stockCode}
+            note={note}
+          />
         </Contener>
-        <Footer>
-          Displays a daily OHLC chart of a stock of a user’s choice
-        </Footer>
+        <Footer />
       </MainWrapper>
     </React.Fragment>
   );
 };
 
-export default Main;
+Main.propTypes = {
+  stockData: PropTypes.objectOf(PropTypes.any),
+  isLoading: PropTypes.bool,
+  stockCode: PropTypes.string,
+  note: PropTypes.string
+};
+
+Main.defaultProps = {
+  stockData: {},
+  isLoading: false,
+  stockCode: "",
+  note: ""
+};
+
+const mapStateToProps = state => {
+  return {
+    stockData: state.stockData,
+    isLoading: state.loading,
+    stockCode: state.stockCode,
+    note: state.note
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(Main);

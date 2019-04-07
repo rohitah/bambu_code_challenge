@@ -1,8 +1,7 @@
-export const getStockData = (payload, name) => {
+export const getStockData = payload => {
   return {
     type: "GET_STOCK_DATA",
-    payload,
-    stockName: name
+    payload
   };
 };
 
