@@ -113,7 +113,7 @@ const DrawChart = ({ stockData }) => {
       </GroupElement>
       <GroupElement>
         {[...Array(11)].map((e, i) => {
-          const xPosition = 90 + i * 100;
+          const xPosition = 100 + i * 99;
           const arrIndex = (i * 10 || 1) - 1;
           const dateObj = new Date(processedData[arrIndex].date);
           return (
@@ -126,7 +126,7 @@ const DrawChart = ({ stockData }) => {
                 strokeWidth="2"
                 stroke="#000"
               />
-              <text x={xPosition - 4} y="530" textAnchor="middle">
+              <text x={xPosition} y="530" textAnchor="middle">
                 {dateObj.getDate()} {monthList[dateObj.getMonth()]}
               </text>
             </React.Fragment>
