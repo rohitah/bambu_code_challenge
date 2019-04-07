@@ -2,11 +2,11 @@
 
 ### About
 
-A single page application which display a daily OHLC chart of stocks of a user's choice
+A single page application which display a daily OHLC chart of stocks of a user's choice.
 
 ### Prerequisite
 
-To run this project Node and npm are required
+To run this project Node and npm are required,
 
 - [x] Node 10.x
 - [x] npm 6.x
@@ -17,5 +17,5 @@ To run this project Node and npm are required
 
    `git clone https://github.com/rohitah/bambu_code_challenge.git`
 
-2. Run `npm install` to install all node module dependencies
-3. Run `npm start` to run the project.
+2. Run `npm install` to install all node module dependencies.
+3. Run `npm run start:dev` to run the project.
